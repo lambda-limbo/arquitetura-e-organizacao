@@ -20,6 +20,8 @@ void loop() {
   byte n2 = B00000010;
 
   if (c) {
+    // Configura o barramento de clock que no caso seria utilizado para 
+    // sincronia.
     PORTB = B00000001;
     send_bits(op);  
     send_bits(n1);
@@ -31,6 +33,7 @@ void loop() {
 }
 
 void send_bits(byte b) {
+  // Envia o byte de dados no barramento A.
   PORTA = b;
   delay(200);
 }
